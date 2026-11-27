@@ -17,14 +17,14 @@ void decryptLayer2(char *text, const char *key) {
             int shift = tolower((unsigned char)key[j % keyLen]) - 'a';
             if (isupper((unsigned char)text[i])) text[i] = ((text[i] - 'A' - shift + 26) % 26) + 'A';
             else text[i] = ((text[i] - 'a' - shift + 26) % 26) + 'a';
-            // TODO: missing 1 line here (hint: it's an increment)
+            j++;
         }
     }
 }
 int main(void) {
     char ciphertext[] = "Avrrybde vq Mbbs Zpqoyz";
     int shiftKey1 = 99;
-    char vigenereKey2[] = "wrongkey";
+    char vigenereKey2[] = "tempkey";
 
     decryptLayer1(ciphertext, shiftKey1);
     decryptLayer2(ciphertext, vigenereKey2);
