@@ -23,10 +23,11 @@ void decryptLayer2(char *text, const char *key) {
 }
 int main(void) {
     char ciphertext[] = "Avrrybde vq Mbbs Zpqoyz";
-    int shiftKey1 = 99;
+    int shiftKey1 = 3;
     char vigenereKey2[] = "wrongkey";
 
     decryptLayer1(ciphertext, shiftKey1);
+    printf("[Layer 1] Intermediate: %s\n", ciphertext);
     decryptLayer2(ciphertext, vigenereKey2);
 
     printf("[Layer 2] Plaintext   : %s\n", ciphertext);
